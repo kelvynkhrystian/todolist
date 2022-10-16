@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Outfit', sans-serif;
 }
 
 body {
@@ -8,7 +9,7 @@ body {
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   display: flex;
-  font-family: 'Outfit', sans-serif;
+
   justify-content: center;
   height: 100vh;
 }
@@ -42,7 +43,6 @@ input {
   width: 70%;
   cursor: pointer;
   padding-left: 5px;
-  font-family: 'Outfit', sans-serif;
 }
 
 /* definir a cor do input selecionado */
