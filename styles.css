@@ -38,9 +38,10 @@ label {
 input {
   border: none;
   border-radius: 5px;
-  height: 30px;
+  height: 40px;
   width: 70%;
   cursor: pointer;
+  padding-left: 5px;
 }
 
 /* definir a cor do input selecionado */
@@ -57,7 +58,7 @@ button {
   border-radius: 5px;
   color: rgb(255, 255, 255);
   font-size: x-large;
-  height: 30px;
+  height: 40px;
   width: 15%;
 }
 
