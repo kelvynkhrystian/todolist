@@ -4,14 +4,26 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="styles.css">
       <title>To Do List</title>
+      <style>
+        body {
+          align-items: center;
+          background-color: rgb(0, 0, 0);
+          color: rgb(255, 255, 255);
+          display: flex;
+          font-family: 'Outfit', sans-serif;
+          justify-content: center;
+          height: 100vh;
+        }
+        img {
+          width: 200px;
+        }
+      </style>
   </head>
   <body>
       <img
         src="./carregando.gif" 
         alt="logo animada de tarefa concluída"
-        class="concluido"
       >
 
       <script>
@@ -20,7 +32,8 @@
 
         setTimeout( function() {
           location.href='./index2.html'
-        },1000);
+        },2000);
+        
       </script>
   </body>
 </html>
