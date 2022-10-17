@@ -78,10 +78,16 @@ main {
   color: rgb(255, 255, 255);
 }
 
+.task-item-ok {
+  color: rgb(51, 51, 51);
+  text-decoration: line-through;
+}
+
 div {
   align-items: center;
   background-color: rgb(37, 37, 37);
   border-radius: 5px;
+  cursor: pointer;
   display: flex;
   flex-wrap: wrap;
   font-size: x-large;
