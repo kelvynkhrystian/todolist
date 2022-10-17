@@ -1,7 +1,7 @@
 const input = document.getElementById("input")
 const btnInput = document.getElementById("btnAdd")
 const taskBox = document.getElementById("task-box")
-const div= document.getElementById("task-item")
+const div = document.getElementsByTagName("task-item")
 
 function addTarefa() {
   let valueTask = input.value;
