@@ -96,3 +96,11 @@ div {
   padding: 10px;
   margin-bottom: 10px;
 }
+
+div:hover {
+  background-color: rgb(109, 109, 109);
+}
+
+div:target {
+  background-color: blue;
+}

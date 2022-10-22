@@ -1,7 +1,7 @@
 const input = document.getElementById("input")
 const btnInput = document.getElementById("btnAdd")
 const taskBox = document.getElementById("task-box")
-const div = document.getElementsByTagName("task-item")
+// const div = document.getElementsByClassName("task-item")
 
 function addTarefa() {
   let valueTask = input.value;
@@ -14,8 +14,12 @@ function addTarefa() {
   }
 }
 
+const div = document.getElementsByClassName("task-item")
+
 function concluiTarefa() {
-  div.classList.toggle("task-item-ok");
+  let itemOK = div
+  itemOK.classList.toggle("task-item-ok");
+  console.log("ok")
 }
 
 btnInput.addEventListener ("click", addTarefa);
