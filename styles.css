@@ -63,6 +63,7 @@ button {
   font-size: x-large;
   height: 40px;
   width: 15%;
+  transition: background 1s;;
 }
 
 button:hover {
@@ -70,7 +71,7 @@ button:hover {
   cursor: pointer;
 }
 
-main {
+ul {
   width: 90%;
 }
 
@@ -80,10 +81,10 @@ main {
 
 .task-item-ok {
   color: rgb(51, 51, 51);
-  text-decoration: line-through;
+  text-decoration: line-through solid rgb(0, 0, 0);
 }
 
-div {
+li {
   align-items: center;
   background-color: rgb(37, 37, 37);
   border-radius: 5px;
@@ -95,17 +96,23 @@ div {
   color: white;
   padding: 10px;
   margin-bottom: 10px;
+  transition: background 0.5s;
 }
 
-div:hover {
+li:hover {
   background-color: rgb(109, 109, 109);
 }
 
-div:active {
+/* li:focus {
+  background-color: rgb(27, 44, 99);
+} */
+
+li:active {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
 }
 
-div::selection {
-  background-color: rgb(255, 255, 255);
-}
+/* li::selection {
+  background-color: rgb(187, 14, 14);
+  color: blue;
+} */

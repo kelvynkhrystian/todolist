@@ -1,12 +1,11 @@
 const input = document.getElementById("input")
 const btnInput = document.getElementById("btnAdd")
 const taskBox = document.getElementById("task-box")
-// const div = document.getElementsByClassName("task-item")
 
 function addTarefa() {
   let valueTask = input.value;
   if (valueTask !== "") {
-    let item = document.createElement("div");
+    let item = document.createElement("li");
     item.innerHTML = valueTask;
     item.className = "task-item";
     taskBox.appendChild(item);
@@ -14,13 +13,13 @@ function addTarefa() {
   }
 }
 
-const div = document.getElementsByClassName("task-item")
+const li = document.getElementsByClassName("task-item")
 
 function concluiTarefa() {
-  let itemOK = div
+  let itemOK = li
   itemOK.classList.toggle("task-item-ok");
   console.log("ok")
 }
 
 btnInput.addEventListener ("click", addTarefa);
-div.addEventListener ("click", concluiTarefa);
+li.addEventListener ("dblclick", concluiTarefa);
