@@ -101,6 +101,11 @@ div:hover {
   background-color: rgb(109, 109, 109);
 }
 
-div:target {
-  background-color: blue;
+div:active {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+div::selection {
+  background-color: rgb(255, 255, 255);
 }
