@@ -14,6 +14,7 @@ const addTask = () => {
     item.innerHTML = valueTask;
     item.classList.add("task-item");
     item.onclick = completedTask;
+    item.ondblclick = removeTask;
     taskBox.appendChild(item);
     input.value = "";
   }
@@ -21,6 +22,10 @@ const addTask = () => {
 
 const completedTask = event => {
   event.target.classList.toggle('task-item-ok');
+}
+
+const removeTask = event => {
+  event.target.remove();
 }
 
 // Evento principal
