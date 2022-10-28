@@ -13,9 +13,14 @@ const addTask = () => {
     let item = document.createElement("li");
     item.innerHTML = valueTask;
     item.classList.add("task-item");
+    item.onclick = completedTask;
     taskBox.appendChild(item);
     input.value = "";
   }
+}
+
+const completedTask = event => {
+  event.target.classList.toggle('task-item-ok');
 }
 
 // Evento principal
