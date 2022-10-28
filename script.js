@@ -7,7 +7,7 @@ const li = document.getElementsByTagName("li")
 
 // Funções 
 
-function addTask() {
+const addTask = () => {
   let valueTask = input.value;
   if (valueTask !== "") {
     let item = document.createElement("li");
@@ -18,9 +18,7 @@ function addTask() {
   }
 }
 
-
-
-// Eventos
+// Evento principal
 
 btnInput.addEventListener ("click", addTask);
 
