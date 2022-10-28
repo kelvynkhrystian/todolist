@@ -32,19 +32,23 @@ const removeTask = event => {
 
 const clearAll = () => {
 
-  console.log(taskBox.children);
-  console.log(" ");
-  console.log(" ");
+  console.log(taskBox.childElementCount);
+  
 
-  for (let i=0; i<=taskBox.children.length; i+=1) {
-    let itemLi = taskBox.children[i]
-    // console.log(taskBox.children[i].innerHTML);
-    // console.log(itemLi);
-    // taskBox.removeChild(itemLi)
-    itemLi.innerHTML = ''
+  for (index of taskBox) {
+    if (taskBox.childElementCount > 0) {
+      taskBox.firstElementChild.remove()
+    }
   }
 
-  // btnClear.style.display = 'none'
+  // function clearList() {
+  //   let liList = document.querySelector("#lista-tarefas")
+  //   for (index in liList) {
+  //     if (liList.childElementCount !== 0) {
+  //       liList.firstElementChild.remove(index)
+  //     }
+  //   }
+  // }
 }
 
 // Evento principal
