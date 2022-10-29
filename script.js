@@ -6,6 +6,9 @@ const btnClear = document.getElementById("btnClearAll")
 const taskBox = document.getElementById("task-box")
 const li = document.getElementsByTagName("li")
 
+// escondendo o botão
+btnClear.style.display = 'none';
+
 // Funções 
 
 const addTask = () => {
