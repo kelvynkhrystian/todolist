@@ -5,9 +5,11 @@ const btnInput = document.getElementById("btnAdd")
 const btnClear = document.getElementById("btnClearAll")
 const taskBox = document.getElementById("task-box")
 const li = document.getElementsByTagName("li")
+const btnBox = document.getElementById("btn-box")
 
-// escondendo o botão
+// escondendo os botões inicialmente
 btnClear.style.display = 'none';
+btnBox.style.display = 'none'
 
 // Funções 
 
@@ -21,13 +23,14 @@ const addTask = () => {
     item.ondblclick = removeTask;
     taskBox.appendChild(item);
     input.value = "";
-    btnClear.style.display = 'block'
+    btnClear.style.display = 'block';
+    btnBox.style.display = 'flex';
   }
 }
 
 const selectTask = event => {
   for (let i=0; i<li.length; i+=1) {
-    
+
   }
   event.target.classList.toggle('selected');
 }
@@ -48,6 +51,7 @@ const clearAll = () => {
     }
   }
   btnClear.style.display = 'none';
+  btnBox.style.display = 'none'
 }
 
 // Eventos
