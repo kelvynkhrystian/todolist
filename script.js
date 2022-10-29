@@ -79,10 +79,23 @@ const moveUp = () => {
   }
 }
 
+const moveDown = () => {
+  let itemSelected = document.querySelector('.selected');
+  let itemBelow = itemSelected.nextElementSibling.nextElementSibling;
+
+  // não precisou da condição
+  
+  // if (itemBelow !== null) {
+  //   itemSelected.parentElement.insertBefore(itemSelected, itemBelow);
+  // }
+
+  itemSelected.parentElement.insertBefore(itemSelected, itemBelow);
+}
+
 // Eventos
 
 btnInput.addEventListener ("click", addTask);
 btnClearAll.addEventListener ("click", clearAll);
 btnClear.addEventListener("click", clear);
 btnMoveUp.addEventListener('click', moveUp);
-// btnMoveDown.addEventListener('click', moveDown);
+btnMoveDown.addEventListener('click', moveDown);
