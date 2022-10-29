@@ -64,13 +64,18 @@ const clearAll = () => {
 }
 
 const clear = () => {
-  
+
+  let selected = document.querySelector('.selected')
+  selected.remove()
+  // if (selected.class === 'selected') {
+   
+  // }
 }
 
 // Eventos
 
 btnInput.addEventListener ("click", addTask);
 btnClearAll.addEventListener ("click", clearAll);
-btnClear.addEventListener('click', clear);
+btnClear.addEventListener("click", clear);
 // btnMoveUp.addEventListener('click', moveUp);
 // btnMoveDown.addEventListener('click', moveDown);
