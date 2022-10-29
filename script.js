@@ -32,13 +32,11 @@ const addTask = () => {
 }
 
 const selectTask = event => {
-
   let selected = document.querySelectorAll(".task-item");
   for (let i=0; i<li.length; i+=1) {
     selected[i].classList.remove('selected')
   }
   event.target.classList.add('selected');
-
 }
 
 const completedTask = event => {
@@ -53,7 +51,6 @@ const completedTask = event => {
 // }
 
 const clearAll = () => {
-
   for (let i=0; i<taskBox.children.length; i+=1) {
     while (taskBox.childElementCount > 0) {
       taskBox.removeChild(taskBox.children[i])
@@ -64,12 +61,22 @@ const clearAll = () => {
 }
 
 const clear = () => {
-
   let selected = document.querySelector('.selected')
   selected.remove()
-  // if (selected.class === 'selected') {
-   
-  // }
+  if (li.length === 0) {
+    btnClearAll.style.display = 'none';
+    btnBox.style.display = 'none'
+  }
+}
+
+const moveUp = () => {
+  let itemSelected = document.querySelector('.selected');
+  let itemAbove = itemSelected.previousElementSibling;
+
+  // add condição - pois se n ele n para na primeira posição de cima
+  if (itemAbove !== null) {
+    itemSelected.parentElement.insertBefore(itemSelected, itemAbove);
+  }
 }
 
 // Eventos
@@ -77,5 +84,5 @@ const clear = () => {
 btnInput.addEventListener ("click", addTask);
 btnClearAll.addEventListener ("click", clearAll);
 btnClear.addEventListener("click", clear);
-// btnMoveUp.addEventListener('click', moveUp);
+btnMoveUp.addEventListener('click', moveUp);
 // btnMoveDown.addEventListener('click', moveDown);
