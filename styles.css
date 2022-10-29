@@ -26,7 +26,7 @@ header {
   flex-direction: column;
   justify-content: flex-start;
   padding: 10px;
-  width: 80%;
+  width: 90%;
 }
 
 h1 {
@@ -88,7 +88,7 @@ button {
 }
 
 ul {
-  width: 80%;
+  width: 90%;
 }
 
 /* .task-item {
@@ -132,7 +132,7 @@ li:hover {
   border-radius: 2px;
   height: 50px;
   margin-top: 10px;
-  width: 80%;
+  width: 90%;
 }
 
 #btnClearAll:hover {
