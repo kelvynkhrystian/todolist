@@ -2,13 +2,16 @@
 
 const input = document.getElementById("input")
 const btnInput = document.getElementById("btnAdd")
-const btnClear = document.getElementById("btnClearAll")
+const btnClearAll = document.getElementById("btnClearAll")
 const taskBox = document.getElementById("task-box")
 const li = document.getElementsByTagName("li")
 const btnBox = document.getElementById("btn-box")
+const btnClear = document.getElementById("btnClear")
+const btnMoveUp = document.getElementById("btnMoveUp")
+const btnMoveDown = document.getElementById("btnMoveDown")
 
 // escondendo os botões inicialmente
-btnClear.style.display = 'none';
+btnClearAll.style.display = 'none';
 btnBox.style.display = 'none'
 
 // Funções 
@@ -20,28 +23,34 @@ const addTask = () => {
     item.innerHTML = valueTask;
     item.classList.add("task-item");
     item.onclick = selectTask;
-    item.ondblclick = removeTask;
+    item.ondblclick = completedTask;
     taskBox.appendChild(item);
     input.value = "";
-    btnClear.style.display = 'block';
+    btnClearAll.style.display = 'block';
     btnBox.style.display = 'flex';
   }
 }
 
 const selectTask = event => {
-  for (let i=0; i<li.length; i+=1) {
 
+  let selected = document.querySelectorAll(".task-item");
+  for (let i=0; i<li.length; i+=1) {
+    selected[i].classList.remove('selected')
   }
-  event.target.classList.toggle('selected');
+  event.target.classList.add('selected');
+
 }
 
 const completedTask = event => {
   event.target.classList.toggle('task-item-ok');
 }
 
-const removeTask = event => {
-  event.target.remove();
-}
+// função de remover com 2 cliques - removida
+// será adicionada uma funcão semelhante liga a um botão
+
+// const removeTask = event => {
+//   event.target.remove();
+// }
 
 const clearAll = () => {
 
@@ -50,11 +59,18 @@ const clearAll = () => {
       taskBox.removeChild(taskBox.children[i])
     }
   }
-  btnClear.style.display = 'none';
+  btnClearAll.style.display = 'none';
   btnBox.style.display = 'none'
+}
+
+const clear = () => {
+  
 }
 
 // Eventos
 
 btnInput.addEventListener ("click", addTask);
-btnClear.addEventListener ("click", clearAll);
+btnClearAll.addEventListener ("click", clearAll);
+btnClear.addEventListener('click', clear);
+// btnMoveUp.addEventListener('click', moveUp);
+// btnMoveDown.addEventListener('click', moveDown);

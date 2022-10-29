@@ -82,7 +82,7 @@ button {
   font-size: x-large;
   height: 40px;
   width: 15%;
-  transition: background 1s;
+  transition: background 0.5s;
 }
 
 #btnAdd:hover {
@@ -114,7 +114,7 @@ li {
   color: white;
   padding: 15px 10px;
   margin-bottom: 5px;
-  transition: background 2s;
+  transition: background 0.5s;
 }
 
 /* li:hover {
@@ -143,7 +143,7 @@ li {
 }
 
 .selected {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(211, 211, 211);
   color: black;
 }
 
