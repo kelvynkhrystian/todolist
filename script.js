@@ -37,6 +37,7 @@ const clearAll = () => {
       taskBox.removeChild(taskBox.children[i])
     }
   }
+  btnClear.style.display = 'none';
 }
 
 // Eventos
