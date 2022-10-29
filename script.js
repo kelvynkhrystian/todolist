@@ -17,12 +17,19 @@ const addTask = () => {
     let item = document.createElement("li");
     item.innerHTML = valueTask;
     item.classList.add("task-item");
-    item.onclick = completedTask;
+    item.onclick = selectTask;
     item.ondblclick = removeTask;
     taskBox.appendChild(item);
     input.value = "";
     btnClear.style.display = 'block'
   }
+}
+
+const selectTask = event => {
+  for (let i=0; i<li.length; i+=1) {
+    
+  }
+  event.target.classList.toggle('selected');
 }
 
 const completedTask = event => {
