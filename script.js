@@ -69,6 +69,7 @@ const clear = () => {
   selected.remove()
   if (li.length === 0) {
     btnClearAll.style.display = 'none';
+    btnSaveList.style.display = 'none';
     btnBox.style.display = 'none'
   }
 }
