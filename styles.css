@@ -130,16 +130,35 @@ li {
 
 #btnClearAll {
   color: white;
-  background-color: rgb(160, 23, 23);
-  border: none;
-  border-radius: 2px;
-  height: 50px;
+  /* background-color: rgb(160, 23, 23); */
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 255, 255);
+  /* border: none; */
+
+  min-height: 50px;
   margin-top: 10px;
   width: 90%;
 }
 
 #btnClearAll:hover {
   background-color: rgb(223, 51, 51);
+  border: none;
+}
+
+#btnSaveList {
+  color: white;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 255, 255);
+  min-height: 50px;
+  margin-top: 10px;
+  width: 90%;
+}
+
+#btnSaveList:hover {
+  background-color: rgb(241, 145, 0);
+  border: none;
 }
 
 .selected {
@@ -150,7 +169,7 @@ li {
 #btn-box {
   display: flex;
   justify-content: space-between;
-  height: 50px;
+  min-height: 50px;
   margin-top: 10px;
   width: 90%;
 }

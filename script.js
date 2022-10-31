@@ -3,6 +3,7 @@
 const input = document.getElementById("input")
 const btnInput = document.getElementById("btnAdd")
 const btnClearAll = document.getElementById("btnClearAll")
+const btnSaveList = document.getElementById("btnSaveList")
 const taskBox = document.getElementById("task-box")
 const li = document.getElementsByTagName("li")
 const btnBox = document.getElementById("btn-box")
@@ -12,6 +13,7 @@ const btnMoveDown = document.getElementById("btnMoveDown")
 
 // escondendo os botões inicialmente
 btnClearAll.style.display = 'none';
+btnSaveList.style.display = 'none';
 btnBox.style.display = 'none'
 
 // Funções 
@@ -27,6 +29,7 @@ const addTask = () => {
     taskBox.appendChild(item);
     input.value = "";
     btnClearAll.style.display = 'block';
+    btnSaveList.style.display = 'block';
     btnBox.style.display = 'flex';
   }
 }
@@ -57,6 +60,7 @@ const clearAll = () => {
     }
   }
   btnClearAll.style.display = 'none';
+  btnSaveList.style.display = 'none';
   btnBox.style.display = 'none'
 }
 
