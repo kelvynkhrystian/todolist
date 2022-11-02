@@ -63,6 +63,8 @@ const clearAll = () => {
   btnSaveList.style.display = 'none';
   btnBox.style.display = 'none'
 
+  // webstorage
+  localStorage.clear();
 }
 
 const clear = () => {
