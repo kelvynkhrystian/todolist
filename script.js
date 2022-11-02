@@ -1,9 +1,7 @@
 // Declarações
-
 const input = document.getElementById("input")
 const btnInput = document.getElementById("btnAdd")
 const btnClearAll = document.getElementById("btnClearAll")
-const btnSaveList = document.getElementById("btnSaveList")
 const taskBox = document.getElementById("task-box")
 const li = document.getElementsByTagName("li")
 const btnBox = document.getElementById("btn-box")
@@ -13,7 +11,6 @@ const btnMoveDown = document.getElementById("btnMoveDown")
 
 // escondendo os botões inicialmente
 btnClearAll.style.display = 'none';
-btnSaveList.style.display = 'none';
 btnBox.style.display = 'none'
 
 // Funções 
@@ -29,7 +26,6 @@ const addTask = () => {
     taskBox.appendChild(item);
     input.value = "";
     btnClearAll.style.display = 'block';
-    btnSaveList.style.display = 'block';
     btnBox.style.display = 'flex';
     saveList();
   }
@@ -47,13 +43,6 @@ const completedTask = event => {
   event.target.classList.toggle('task-item-ok');
 }
 
-// função de remover com 2 cliques - removida
-// será adicionada uma funcão semelhante liga a um botão
-
-// const removeTask = event => {
-//   event.target.remove();
-// }
-
 const clearAll = () => {
   for (let i=0; i<taskBox.children.length; i+=1) {
     while (taskBox.childElementCount > 0) {
@@ -61,7 +50,6 @@ const clearAll = () => {
     }
   }
   btnClearAll.style.display = 'none';
-  btnSaveList.style.display = 'none';
   btnBox.style.display = 'none'
 
   // webstorage
@@ -73,7 +61,6 @@ const clear = () => {
   selected.remove()
   if (li.length === 0) {
     btnClearAll.style.display = 'none';
-    btnSaveList.style.display = 'none';
     btnBox.style.display = 'none'
   }
 }
@@ -91,18 +78,10 @@ const moveUp = () => {
 const moveDown = () => {
   let itemSelected = document.querySelector('.selected');
   let itemBelow = itemSelected.nextElementSibling.nextElementSibling;
-
-  // não precisou da condição
-  
-  // if (itemBelow !== null) {
-  //   itemSelected.parentElement.insertBefore(itemSelected, itemBelow);
-  // }
-
   itemSelected.parentElement.insertBefore(itemSelected, itemBelow);
 }
 
 // Eventos
-
 btnInput.addEventListener ("click", addTask);
 btnClearAll.addEventListener ("click", clearAll);
 btnClear.addEventListener("click", clear);
@@ -115,7 +94,7 @@ const saveList = () => {
   // localStorage
   const localS = [];
   const localSItens = document.querySelectorAll(".task-item");
-  console.log(localSItens);
+  // console.log(localSItens);
 
   for (let i=0; i<localSItens.length; i+=1) {
     localS.push(localSItens[i].innerText);
@@ -124,25 +103,20 @@ const saveList = () => {
   localStorage.setItem('list', JSON.stringify(localS));
 }
 
-
-// Evento extra do webstorage
-// const btnSave = document.getElementById('btnSaveList');
-// btnSave.addEventListener('click', saveList)
-
-
-
 const loadList = () => {
   const listLS = JSON.parse(localStorage.getItem('list')) || {};
-  // console.log(listLocalStorage);
   for (let i=0; i<listLS.length; i+=1) {
     const listItemLS = document.createElement('li');
     listItemLS.innerText = listLS[i];
     listItemLS.classList.add("task-item");
     listItemLS.onclick = selectTask;
     listItemLS.ondblclick = completedTask;
-    btnClearAll.style.display = 'block';
-    btnSaveList.style.display = 'block';
-    btnBox.style.display = 'flex';
+
+    if (listLS.length > 0) {
+      btnClearAll.style.display = 'block';
+      btnBox.style.display = 'flex';
+    }
+    
     taskBox.appendChild(listItemLS);
   }
 }
