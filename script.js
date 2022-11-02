@@ -37,10 +37,12 @@ const selectTask = event => {
     selected[i].classList.remove('selected')
   }
   event.target.classList.add('selected');
+  saveList();
 }
 
 const completedTask = event => {
   event.target.classList.toggle('task-item-ok');
+  saveList();
 }
 
 const clearAll = () => {
@@ -63,6 +65,7 @@ const clear = () => {
     btnClearAll.style.display = 'none';
     btnBox.style.display = 'none'
   }
+  saveList();
 }
 
 const moveUp = () => {
@@ -73,12 +76,14 @@ const moveUp = () => {
   if (itemAbove !== null) {
     itemSelected.parentElement.insertBefore(itemSelected, itemAbove);
   }
+  saveList();
 }
 
 const moveDown = () => {
   let itemSelected = document.querySelector('.selected');
   let itemBelow = itemSelected.nextElementSibling.nextElementSibling;
   itemSelected.parentElement.insertBefore(itemSelected, itemBelow);
+  saveList();
 }
 
 // Eventos
@@ -91,10 +96,8 @@ btnMoveDown.addEventListener('click', moveDown);
 // WebStorage
 
 const saveList = () => {
-  // localStorage
   const localS = [];
-  const localSItens = document.querySelectorAll(".task-item");
-  // console.log(localSItens);
+  const localSItens = document.querySelectorAll("li");
 
   for (let i=0; i<localSItens.length; i+=1) {
     localS.push(localSItens[i].innerText);
