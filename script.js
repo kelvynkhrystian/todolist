@@ -62,6 +62,7 @@ const clearAll = () => {
   btnClearAll.style.display = 'none';
   btnSaveList.style.display = 'none';
   btnBox.style.display = 'none'
+
 }
 
 const clear = () => {
@@ -104,3 +105,42 @@ btnClearAll.addEventListener ("click", clearAll);
 btnClear.addEventListener("click", clear);
 btnMoveUp.addEventListener('click', moveUp);
 btnMoveDown.addEventListener('click', moveDown);
+
+// WebStorage
+
+const saveList = () => {
+  // localStorage
+  const localS = JSON.parse(localStorage.getItem('list')) || [];
+  const localSItens = document.querySelectorAll(".task-item");
+  console.log(localSItens);
+
+  for (let i=0; i<localSItens.length; i+=1) {
+    localS.push(localSItens[i].innerText);
+  }
+
+  localStorage.setItem('list', JSON.stringify(localS));
+}
+
+
+// Evento extra do webstorage
+const btnSave = document.getElementById('btnSaveList');
+btnSave.addEventListener('click', saveList)
+
+
+const loadList = () => {
+  const listLS = JSON.parse(localStorage.getItem('list')) || {};
+  // console.log(listLocalStorage);
+  for (let i=0; i<listLS.length; i+=1) {
+    const listItemLS = document.createElement('li');
+    listItemLS.innerText = listLS[i];
+    listItemLS.classList.add("task-item");
+    listItemLS.onclick = selectTask;
+    listItemLS.ondblclick = completedTask;
+    btnClearAll.style.display = 'block';
+    btnSaveList.style.display = 'block';
+    btnBox.style.display = 'flex';
+    taskBox.appendChild(listItemLS);
+  }
+}
+
+window.onload = loadList;
