@@ -31,6 +31,7 @@ const addTask = () => {
     btnClearAll.style.display = 'block';
     btnSaveList.style.display = 'block';
     btnBox.style.display = 'flex';
+    saveList();
   }
 }
 
@@ -125,8 +126,9 @@ const saveList = () => {
 
 
 // Evento extra do webstorage
-const btnSave = document.getElementById('btnSaveList');
-btnSave.addEventListener('click', saveList)
+// const btnSave = document.getElementById('btnSaveList');
+// btnSave.addEventListener('click', saveList)
+
 
 
 const loadList = () => {
