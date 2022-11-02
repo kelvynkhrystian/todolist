@@ -112,7 +112,7 @@ btnMoveDown.addEventListener('click', moveDown);
 
 const saveList = () => {
   // localStorage
-  const localS = JSON.parse(localStorage.getItem('list')) || [];
+  const localS = [];
   const localSItens = document.querySelectorAll(".task-item");
   console.log(localSItens);
 
