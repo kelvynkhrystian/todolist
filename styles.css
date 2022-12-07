@@ -174,4 +174,13 @@ li {
   background-color: rgb(6, 201, 184);
   border: none;
 }
-/* no */
+
+@media (min-width:900px) {
+  header,ul,div,button {
+    width: 50%;
+  }
+
+  #btn-box, #btnClearAll {
+    width: 50%;
+  }
+}
